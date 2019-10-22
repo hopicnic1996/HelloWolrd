@@ -18,7 +18,7 @@
 	    ltrim($db["path"], "/")
 	));
 	//you sql query
-	$sql = "SELECT studentname, course FROM registercourse";
+	$sql = "SELECT id, name FROM person";
 	$stmt = $pdo->prepare($sql);
 	//execute the query on the server and return the result set
 	$stmt->setFetchMode(PDO::FETCH_ASSOC);
@@ -30,7 +30,7 @@
 	<?php
 		foreach ($resultSet as $row) {
 			echo "<li>" .
-				$row["studentname"] . '--'. $row["course"]
+				$row["id"] . '--'. $row["name"]
 			. "</li>";
 		}
 	?>
